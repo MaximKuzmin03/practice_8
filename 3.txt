@@ -1,0 +1,9 @@
+lines = 0
+appendText = ': '
+with open("doc.txt", 'r') as files:
+    with open("2.txt", 'a') as updatedFiles:
+        for line in files:
+            lines += 1
+            print(lines, line)
+        for file in files:
+            updatedFiles.write(appendText + file.rstrip() + '\n')

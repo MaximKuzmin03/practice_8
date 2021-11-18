@@ -1,0 +1,28 @@
+import argparse
+import os.path
+
+parser = argparse.ArgumentParser(description='Contact files')
+
+parser.add_argument("doc1", type=str)
+parser.add_argument("doc2", type=str)
+args = parser.parse_args()
+
+def func(doc1,doc2):
+    if os.path.exists(doc1) and os.path.exists(doc2):
+       with open(f'{args.doc1}') as file1:
+           with open(f'{args.doc2}') as file2:
+                while True:
+                    line = file1.readline()
+                    print(line.strip())
+                    if not line:
+                        break
+                while True:
+                    line = file2.readline()
+                    print(line.strip())
+                    if not line:
+                        break
+       return line
+    else:
+        print("Недостачно файлов")
+
+func(args.doc1, args.doc2)
