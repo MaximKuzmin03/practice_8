@@ -1,9 +1,11 @@
-lines = 0
-appendText = ': '
-with open("doc.txt", 'r') as files:
-    with open("2.txt", 'a') as updatedFiles:
-        for line in files:
-            lines += 1
-            print(lines, line)
-        for file in files:
-            updatedFiles.write(appendText + file.rstrip() + '\n')
+def strok_numer(a, new_name):
+    try:
+        t=""
+        k = 1
+        with open(a, 'r') as f:
+            nums = f.read().splitlines()
+        for i in nums:
+            t+=str(k)+": "+i+"\n"
+            k+=1
+        with open(new_name, 'w') as f:
+            f.write(t)
