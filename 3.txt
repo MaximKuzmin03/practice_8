@@ -1,5 +1,4 @@
 def strok_numer(a, new_name):
-    try:
         t=""
         k = 1
         with open(a, 'r') as f:
